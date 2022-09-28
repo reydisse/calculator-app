@@ -45,6 +45,12 @@ const deleteLast = () => {
   }
   const value = calc.slice(0, -1);
   setCalc(value);
+  if (ops.includes(value.slice(-1))){
+    setResult(eval(value.toString().slice(0,1)))
+  }
+  else{
+    setResult(eval(value.toString()))
+  }
 }
 
   return (
